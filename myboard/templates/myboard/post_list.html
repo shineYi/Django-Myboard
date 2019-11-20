@@ -1,0 +1,28 @@
+{% extends 'myboard/header.html' %}
+{% load staticfiles %}
+{% block main %}
+
+<table class="table">
+  <thread>
+    <tr>
+      <th>No.</th>
+      <th>Title</th>
+      <th>Date</th>
+    </tr>
+  </thread>
+  <tbody>
+      {% if post_list %}
+        {% for post in post_list %}
+          <tr>
+          <td>{{ post.id }}</td>
+          <td><a href="{% url 'detail_post' pk=post.id %}">{{ post.title }} ({{ post.comments.count }})</a> </td>
+          <td>{{ post.created_at }}</td>
+          </tr>
+        {% endfor %}
+      {% else %}
+        <p>Oops! No posts in the board</p>
+      {% endif %}
+  </tbody>
+</table>
+
+{% endblock main %}

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>My Board</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<style>
+body {
+  margin-top: 120px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'dashboard' %}"><span class="glyphicon glyphicon-home"></span> </a>
+            <a class="navbar-brand" href="{% url 'add_post' %}"><span class="glyphicon glyphicon-plus"></span> </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="jumbotron">
+
+    {% block main %}
+    {% endblock main %}
+
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <h4 style="text-align:right">NIT Service | Platform Management</h4>
+    </div>
+</div>
+
+</body>
+</html>
+
