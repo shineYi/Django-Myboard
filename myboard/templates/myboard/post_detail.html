@@ -9,7 +9,7 @@
   <p>{{ post.text|linebreaksbr }}</p>
 
   <hr>
-  <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.id %}">Add comment</a>
+  <a class="btn btn-default" href="{% url 'add_comment' pk=post.id %}">Add comment</a>
 
   <table class="table">
     <tbody>
