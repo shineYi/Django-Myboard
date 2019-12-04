@@ -42,7 +42,7 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, detail_template, {'post': post})
 
-def add_comment_to_post(request, pk):
+def add_comment(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = CommentForm(request.POST)
